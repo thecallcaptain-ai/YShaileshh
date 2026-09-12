@@ -207,3 +207,29 @@ body.dark-mode .theme-toggle {
     width: 100%;
   }
 }
+
+/* Social Brand Icons */
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  fill: currentColor;
+}
+
+.social-link.instagram svg {
+  fill: none;
+}
+
+.social-link.instagram svg circle:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-link {
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+}
+
