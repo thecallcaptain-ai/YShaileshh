@@ -18,69 +18,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Current year */
   const year = document.getElementById("year");
+
   if (year) {
     year.textContent = new Date().getFullYear();
   }
 
+});
 
-/* Digital Services Modal */
-(function () {
-  const openBtn = document.getElementById("openServices");
-  const closeBtn = document.getElementById("closeServices");
-  const modal = document.getElementById("servicesModal");
 
-  if (!openBtn || !closeBtn || !modal) return;
+/* ================================
+   DIGITAL SERVICES MODAL
+   ================================ */
 
-  function openModal() {
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal() {
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
-
-  openBtn.addEventListener("click", openModal);
-  closeBtn.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modal.classList.contains("active")) {
-      closeModal();
-    }
-  });
-})();
-
-/* Digital Services Popup - Reliable */
 function openServicesModal() {
   const modal = document.getElementById("servicesModal");
 
-  if (modal) {
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  if (!modal) {
+    console.error("Services modal not found");
+    return;
   }
+
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
+
 
 function closeServicesModal() {
   const modal = document.getElementById("servicesModal");
 
-  if (modal) {
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
+  if (!modal) return;
+
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
 
-document.addEventListener("click", function(event) {
+
+/* Close when clicking outside the popup */
+document.addEventListener("click", function (event) {
   const modal = document.getElementById("servicesModal");
 
   if (modal && event.target === modal) {
@@ -88,7 +64,9 @@ document.addEventListener("click", function(event) {
   }
 });
 
-document.addEventListener("keydown", function(event) {
+
+/* Close with Escape */
+document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     closeServicesModal();
   }
