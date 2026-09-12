@@ -128,3 +128,16 @@ body.dark-mode .theme-toggle {
   color: #fff !important;
 }
 
+
+/* Profile Video */
+.avatar {
+  overflow: hidden;
+}
+
+.avatar video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
