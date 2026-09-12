@@ -308,3 +308,18 @@ body.dark-mode .theme-toggle {
   }
 }
 
+
+.deals-contact {
+  margin-top: 18px !important;
+  font-weight: 600;
+}
+
+.deals-contact a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.deals-contact a:hover {
+  text-decoration: underline;
+}
+
