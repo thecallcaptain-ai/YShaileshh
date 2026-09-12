@@ -17,3 +17,43 @@ h1{font-size:clamp(48px,8vw,88px);line-height:1.02;letter-spacing:-4px;max-width
 .skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}.skills span{border:1px solid var(--line);background:var(--panel);padding:10px 15px;border-radius:999px;color:#d7dce5;font-size:14px}.contact{padding-bottom:130px}
 footer{max-width:1120px;margin:auto;padding:25px 24px 40px;display:flex;justify-content:space-between;color:#70798b;font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:760px){.nav{height:64px}nav{display:none;position:absolute;top:64px;left:0;right:0;padding:20px 24px;background:#0b0f18;border-bottom:1px solid var(--line);flex-direction:column;gap:16px}.nav.open nav{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;min-height:auto;padding:90px 0 50px;gap:50px}.hero-card{max-width:430px;margin:auto;width:100%}.grid{grid-template-columns:1fr}.section{padding:75px 0}h1{letter-spacing:-2.5px}.lead{font-size:17px}footer{flex-direction:column;gap:8px}}
+
+
+/* DARK MODE */
+body.dark-mode {
+  background: #0f1117;
+  color: #f1f5f9;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode section,
+body.dark-mode footer {
+  background-color: #0f1117;
+  color: #f1f5f9;
+}
+
+body.dark-mode a {
+  color: #93c5fd;
+}
+
+body.dark-mode .card,
+body.dark-mode .project-card,
+body.dark-mode .skill-card {
+  background: #171a21;
+  color: #f1f5f9;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 21px;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
