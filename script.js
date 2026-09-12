@@ -22,27 +22,3 @@ document.addEventListener("DOMContentLoaded", function () {
     year.textContent = new Date().getFullYear();
   }
 
-  /* Dark / Light Mode */
-  const button = document.getElementById("themeToggle");
-
-  if (button) {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      button.textContent = "☀️";
-    } else {
-      button.textContent = "🌙";
-    }
-
-    button.addEventListener("click", function () {
-      document.body.classList.toggle("dark-mode");
-
-      const dark = document.body.classList.contains("dark-mode");
-
-      localStorage.setItem("theme", dark ? "dark" : "light");
-      button.textContent = dark ? "☀️" : "🌙";
-    });
-  }
-
-});
