@@ -58,3 +58,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 })();
+
+/* Digital Services Popup - Reliable */
+function openServicesModal() {
+  const modal = document.getElementById("servicesModal");
+
+  if (modal) {
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeServicesModal() {
+  const modal = document.getElementById("servicesModal");
+
+  if (modal) {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+}
+
+document.addEventListener("click", function(event) {
+  const modal = document.getElementById("servicesModal");
+
+  if (modal && event.target === modal) {
+    closeServicesModal();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeServicesModal();
+  }
+});
